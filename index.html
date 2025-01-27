@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>if-else</title>
+    </head>
+    <body>
+        <label for="grade">grade</label>
+        <input type="number" name="grade" id="grade" />
+        <button onclick="Result()">Result</button>
+
+        <br />
+        <hr />
+
+        <label for="num">Number</label>
+        <input type="number" name="num" id="num" />
+        <button onclick="oddeven()">Result</button>
+        <br /><br />
+        <hr />
+
+        <label for="numb">Number</label>
+        <input type="number" name="numb" id="numb" />
+        <button onclick="mtable()">Result</button>
+
+        <br /><br />
+        <hr />
+
+        <label for="largenum">Number</label>
+        <input type="number" name="largenum" id="largenum" />
+        <button onclick="sumnumrange()">Result</button>
+
+        <br /><br />
+        <hr />
+
+        <label for="n">Number 1</label>
+        <input type="number" name="n" id="n" />
+        <label for="n2">Number 2</label>
+        <input type="number" name="n2" id="n2" />
+        <label for="n3">Number 3</label>
+        <input type="number" name="n3" id="n3" />
+        <button onclick="bignum()">Result</button>
+    </body>
+    <script>
+        function Result() {
+            const grade = document.getElementById("grade").value;
+            if (grade >= 90 && grade <= 100) {
+                console.log("A");
+            } else if (grade >= 80 && grade <= 89) {
+                console.log("B");
+            } else if (grade >= 70 && grade <= 79) {
+                console.log("C");
+            } else if (grade >= 60 && grade <= 69) {
+                console.log("D");
+            } else {
+                console.log("F");
+            }
+        }
+
+        function oddeven() {
+            const number = document.getElementById("num").value;
+            if (number % 2 === 0) {
+                console.log("even number");
+                document.write("even number");
+            } else {
+                console.log("odd number");
+                document.write("odd number");
+            }
+        }
+        function mtable() {
+            const number = document.getElementById("numb").value;
+            for (i = 1; i <= 10; i++) {
+                const tab = i * number;
+                document.write(`${number}*${i}= ${tab}`);
+                console.log(`${number}*${i}= ${tab}`);
+            }
+        }
+        function sumnumrange() {
+            const number = document.getElementById("sumn").value;
+            if (0 < number) {
+                let sum = 0;
+                for (let i = 1; i <= number; i++) {
+                    sum = sum + i;
+                }
+                console.log(sum);
+                document.write(sum);
+            } else {
+                console.log("enter +ve num");
+            }
+        }
+        function bignum() {
+            let n1 = document.getElementById("n").value;
+            let n2 = document.getElementById("n2").value;
+            let n3 = document.getElementById("n3").value;
+
+            let largest;
+
+            if (n1 >= n2) {
+                if (n1 >= n3) {
+                    largest = n1;
+                } else {
+                    largest = n3;
+                }
+            } else {
+                if (n2 >= n3) {
+                    largest = n2;
+                } else {
+                    largest = n3;
+                }
+            }
+
+            console.log(`The largest number among ${n1}, ${n2}, and ${n3} is: ${largest}`);
+        }
+    </script>
+</html>
